@@ -1,0 +1,22 @@
+.tracks {
+  display: flex;
+  height: 120px;
+  width: 480px;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: rgba(205, 144, 105, 0.7);
+  margin-bottom: 25px;
+}
+
+img {
+  height: 120px;
+  width: 120px;
+}
+
+.tracks-info {
+  width: 360px;
+}
+
+.tracks-info > h2, p {
+  margin: 0;
+}

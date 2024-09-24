@@ -1,7 +1,12 @@
 .playlist-card {
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.7);
   height: 650px;
   width: 500px;
   margin-top: 75px;
   border-radius: 75px;
+}
+
+.playlist-card > h2 {
+  margin: 0;
+  padding: 10px;
 }
