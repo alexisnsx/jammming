@@ -1,0 +1,22 @@
+input {
+  background-color: white;
+  border: none;
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 15px;
+  font-family: 'Balsamiq Sans', 'Courier New', Courier, monospace;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 25px;
+  height: 40px;
+  width: 160px;
+  border: none;
+  border-radius: 120px;
+  background-color: red;
+  font-family: 'Balsamiq Sans', 'Courier New', Courier, monospace;
+  font-size: 1rem;
+}
