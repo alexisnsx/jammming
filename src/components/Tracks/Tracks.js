@@ -1,20 +1,25 @@
 import React from "react";
 import './Tracks.css'
-import audio from './Lala - N2.mp3'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+
 
 const Tracks = () => {
   return (
-    <div className="tracks">
-      <div>
-        <img src='https://i.scdn.co/image/ab67616d0000b273413697269620e16f4466f543' alt="bmth" />
-      </div>
-      <div className="tracks-info">
-        <h2>Throne</h2>
-        <p>That's The Spirit</p>
-        <p>Bring Me The Horizon</p>
-        <audio controls>
-          <source src={audio} type="audio/mp3" />
-        </audio>
+    <div className="track-border">
+      <div className="tracks">
+        <div>
+          <img src='https://i.scdn.co/image/ab67616d0000b273413697269620e16f4466f543' alt="bmth" />
+        </div>
+        <div className="tracks-info">
+          <h2>Throne</h2>
+          <p>Bring Me The Horizon | That's the Spirit</p>
+        </div>
+        <div className="track-icons">
+          <FontAwesomeIcon icon={faPlus} />
+          <FontAwesomeIcon icon={faPlayCircle} />
+        </div>
       </div>
     </div>
   )
