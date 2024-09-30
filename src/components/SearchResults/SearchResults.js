@@ -1,16 +1,16 @@
 import React from "react";
 // importing components
 import TrackList from "../TrackList/TrackList";
-import Playlist from "../Playlist/Playlist";
 // import css styles
 import './SearchResults.css'
 
-const SearchResults = () => {
+const SearchResults = ( props ) => {
+
   return (
     <div>
       <div className="search-results">
-        <TrackList />
-        <Playlist />
+        <h2>tracks</h2>
+        <TrackList tracks={props.searchResults} onAdd={props.onAdd} />
       </div>
     </div>
   )

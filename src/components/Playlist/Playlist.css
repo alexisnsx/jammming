@@ -1,12 +1,28 @@
-.playlist-card {
-  background-color: rgba(255, 255, 255, 0.7);
-  height: 650px;
-  width: 500px;
-  margin-top: 75px;
-  border-radius: 75px;
+
+.icon-trash {
+  font-size: 1.2rem;
 }
 
-.playlist-card > h2 {
-  margin: 0;
-  padding: 10px;
+
+/* here */
+.playlist {
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 650px;
+  width: 650px;
+  margin-top: 75px;
+  border-radius: 75px;
+  overflow-y: scroll;
+
+}
+
+.playlist-name {
+  background-color: transparent;
+  border-radius: 0;
+  height: 50px;
+  border-bottom: 2px solid rgba(136, 107, 92, 0.7);
+  outline: none;
+  padding: 0;
+  font-size: 25px;
+  color: #513A37;
+  margin-top: 10px;
 }

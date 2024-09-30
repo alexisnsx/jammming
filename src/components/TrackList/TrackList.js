@@ -3,13 +3,14 @@ import './TrackList.css'
 
 import Tracks from "../Tracks/Tracks";
 
-const TrackList = () => {
+const TrackList = (props) => {
+
   return (
     <div>
       <div className="tracks-card">
-        <h2>tracks</h2>
-        <Tracks />
-        <Tracks />
+        {props.tracks.map((track) => {
+          return <Tracks key={track.id} track={track} onAdd={props.onAdd} isRemoval={props.isRemoval} onRemove={props.onRemove} />
+        })}
       </div>
     </div>
   )
