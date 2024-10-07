@@ -26,12 +26,9 @@ const Tracks = (props) => {
   return (
     <div className="track-border">
       <div className="tracks">
-        <div>
-          <img src={props.track.img} alt={props.track.song} />
-        </div>
         <div className="tracks-info">
           <h2>{props.track.song}</h2>
-          <p>{props.track.artist} | {props.track.album}</p>
+          <p className="second-line">{props.track.artist} | {props.track.album}</p>
         </div>
         {renderAction()}
       </div>

@@ -8,17 +8,22 @@
 .tracks {
   display: flex;
   height: 70px;
-  width: calc(100% - 60px);
+  width: calc(100% - 30px);
   /* justify-content: center;  */
   margin: 0 auto;
   /* background-color: rgba(205, 144, 105, 0.7); */
   align-items: flex-start;
 }
 
-img {
-  height: 70px;
-  width: 70px;
+.second-line {
+  white-space: nowrap;
+  overflow: hidden;              /* Hide the overflow */
+  display: block;
+  max-width: 100%;               /* Adjust based on the container size */
+  box-sizing: border-box;
+  text-overflow: ellipsis;
 }
+
 
 .tracks-info {
   display: flex;
@@ -28,6 +33,7 @@ img {
   justify-content: space-evenly;
   height: 100%;
   flex-grow: 1;
+  width: calc(100% - 60px);
 }
 
 .tracks-info > h2, p {

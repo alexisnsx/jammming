@@ -5,24 +5,13 @@ import React, {useCallback, useState} from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
 import Playlist from './components/Playlist/Playlist';
+import Spotify from './util/Spotify';
 
 
 function App() {
   // essentially the individual tracks when we get the results from Spotify API
   // these are the tracks that will get passed into search results, search results supposed to be empty BEFORE searching
-  const [searchResults, setSearchResults] = useState([{
-    id: 1,
-    song: 'Throne',
-    artist: 'Bring Me The Horizon',
-    album: 'That\'s the Spirit',
-    img: 'https://i.scdn.co/image/ab67616d0000b273413697269620e16f4466f543'
-    }, {
-      id: 2,
-      song: 'second',
-      artist: 'Bring Me The Horizon',
-      album: 'That\'s the Spirit',
-      img: 'https://i.scdn.co/image/ab67616d0000b273413697269620e16f4466f543'
-      }]);
+  const [searchResults, setSearchResults] = useState([]);
   // the tracks that will get passed into playlist
   // tracks that is already loaded from the search and the + button becomes available to click
   // empty at first, once the '+' button is clicked the array starts to populate
@@ -31,7 +20,6 @@ function App() {
   const [playlistName, setPlaylistName] = useState("New Playlist");
 
   const addTrack = useCallback((track) => {
-    console.log(track)
     if (playlistTracks.some((savedTrack)=> savedTrack.id === track.id))
       return;
 
@@ -40,6 +28,17 @@ function App() {
     [playlistTracks]
   );
 
+  const search = useCallback((term) => {
+    Spotify.search(term).then(setSearchResults)
+  }, []);
+
+  const savePlaylist = useCallback(() => {
+    const trackUris = playlistTracks.map((track) => track.uri);
+    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+      updatePlaylistName("New Playlist");
+      setPlaylistTracks([]);
+    })
+  })
 
   const deleteTrack = useCallback((track) => {
     setPlaylistTracks((prevTracks) =>
@@ -55,7 +54,7 @@ function App() {
       <header className='navbar'>
         <h1>Jammming</h1>
       </header>
-      <SearchBar />
+      <SearchBar search={search}/>
       <div className="app-playlist">
         <SearchResults searchResults={searchResults} onAdd={addTrack} />
         <Playlist
@@ -63,7 +62,7 @@ function App() {
           playlistTracks={playlistTracks}
           onRemove={deleteTrack}
           onNameChange={updatePlaylistName}
-
+          save={savePlaylist}
         />
       </div>
     </div>
