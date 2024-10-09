@@ -39,12 +39,15 @@ const Spotify = {
         if (!jsonResponse) {
           console.error("Response error");
         }
+
         return jsonResponse.tracks.items.map((t) => ({
           id: t.id,
           song: t.name,
           artist: t.artists[0].name,
           album: t.album.name,
-          uri: t.uri
+          uri: t.uri,
+          img: t.album.images[0].url,
+          sound: t.preview_url
         }));
       });
   },

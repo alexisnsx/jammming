@@ -10,7 +10,7 @@ const SearchResults = ( props ) => {
     <div>
       <div className="search-results">
         <h2>tracks</h2>
-        <TrackList tracks={props.searchResults} onAdd={props.onAdd} />
+        <TrackList tracks={props.searchResults} onAdd={props.onAdd} playSound={props.playSound} />
       </div>
     </div>
   )

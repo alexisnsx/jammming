@@ -16,7 +16,7 @@ const SearchBar = (props) => {
   return (
     <div className='search-bar'>
       <div className="search-input">
-        <input placeholder="Enter song name" onChange={handleKeywordChange} />
+        <input placeholder="Enter song or artist name" onChange={handleKeywordChange} onKeyDown={(e) => {if (e.key === 'Enter') search() }} />
       </div>
       <div className="search-button" onClick={search}>
         <button>Search</button>

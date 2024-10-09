@@ -10,3 +10,16 @@
 .search-results > h2 {
   color: #513A37;
 }
+
+
+@media screen and (max-width:1500px) {
+  .search-results {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .search-results {
+    gap: 10px;
+  }
+}

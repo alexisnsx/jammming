@@ -9,7 +9,7 @@ const Playlist = ( props) => {
 
   return (
     <div>
-      <div className="playlist">
+      <div className="search-results">
       <div>
         <input className="playlist-name" defaultValue={"New Playlist"} onChange={handleNameChange} />
       </div>
